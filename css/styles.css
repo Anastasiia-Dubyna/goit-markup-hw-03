@@ -27,7 +27,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
 }
 
 .list {
@@ -180,6 +180,7 @@ img {
 .hero-btn {
     display: inline-block;
     border: none;
+    flex-direction: row;
     font-family: var(--primary-font);
     font-weight: 500;
     font-size: 16px;
@@ -187,7 +188,6 @@ img {
     height: 56px;
     padding: 16px 32px;
     line-height: 1.5;
-    align-items: center;
     letter-spacing: 0.04em;
     color: #FFFFFF;
     background: #4D5AE5;
@@ -203,7 +203,8 @@ img {
 
 /* ---------------------------MAIN BODY------------------ */  
 
-.describe {}
+.describe {
+}
 
 .describe-caption {}
 
@@ -234,27 +235,55 @@ img {
     padding-right: 24px;
 }
 .about {
+    margin-top: 120px;
 }
 
-.about-list {}
+.about-list {
+    display: flex;
+}
+
+.about-item:not(:last-child) {
+    padding-right: 24px;
+}
 
 .list {}
 
-.about-item {}
+.about-item {
+    display: flex;
+}
 
-.about-img {}
+.about-img {
+}
 
 .about-img:is(:hover, :focus) {
     cursor: pointer;
 }
 
-.team {}
+.team {
+    background: #F4F4FD;
+}
 
-.team-list {}
+.team-list {
+    display: flex;
+}
 
 .list {}
 
-.team-list-item {}
+.team-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #FFFFFF;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    border-radius: 0px 0px 4px 4px;
+   
+}
+
+.team-list-item:not(:last-child) {
+    margin-right: 24px;
+}
 
 .team-img {}
 
@@ -265,6 +294,8 @@ img {
     text-align: center;
     letter-spacing: 0.02em;
     color: #2E2F42;
+    padding-top: 32px;
+    padding-bottom: 8px;
 }
 
 .team-position {
@@ -273,53 +304,63 @@ img {
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.02em;
-    color: var(--main-color)
+    color: var(--main-color);
+    padding-bottom: 32px;
+    
 }
 /* --------------------PORTFOLIO BODY-------------- */
 .portfolio {}
 
-.portfolio-filters {}
+.portfolio-filters {
+    padding-bottom: 120px;
+}
 
 .portfolio-filters-title {}
 
 .portfolio-filters-list {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: flex-start;
-    padding: 0px;
+    padding-top: 96px;
+    padding-bottom: 72px;
     gap: 24px;
 }
 
+.portfolio-list {
+    background: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 24px;
+}
+
 .portfolio-filters-btn {
+    font-family: inherit;
+    font-style: normal;
     font-weight: 500;
-        font-size: 16px;
-        line-height: 1.5;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.04em;
-        color: #4D5AE5;
-        display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 12px 24px;
-            width: 116px;
-            height: 48px;
-            background: #F4F4FD;
-            border: 1px solid #E7E9FC;
-            border-radius: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #4D5AE5;
+    padding: 12px 24px;
+    background: #f4f4fd;
+    border: 1px solid #e7e9fc;
+    border-radius: 4px;
 }
 .portfolio-filters-btn:is(:hover, :focus) {
-        align-items: flex-start;
-        color: #FFFFFF;
-        background: var(--accent-color);
-        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    align-items: flex-start;
+    color: #FFFFFF;
+    background: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
     
-.portfolio-list {}
+.portfolio-list:nth-child(3n) {
+    display: flex;
+}
 
-.portfolio-filters-item {}
+.portfolio-filters-item {
+ 
+}
 
 .portfolio-link {}
 
@@ -329,19 +370,25 @@ img {
     cursor: pointer;
 }
 
+.portfolio-img-desc {
+    border: 1px solid #e7e9fc;
+}
+
 .portfolio-title {
     font-weight: 500;
-        font-size: 20px;
-        line-height: 1.2;
-        letter-spacing: 0.02em;
-        color: #2E2F42;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    padding-top: 32px;
 }
 
 .portfolio-text {
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-        color: var(--main-color)
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--main-color);
+    padding-top: 8px;
 }
 
 
